@@ -21,6 +21,10 @@
   <%= form.select(:event_venue_id, options_from_collection_for_select(EventVenue.all, :id, :name))%>
   <%= form.label :avatar %>
   <%= form.file_field :avatar %>
+  <%= form.fields_for :ticket_type do |task_form| %>
+    <%= task_form.label :price %>
+    <%= task_form.number_field :price %>
+<% end %>
 
   <div class="actions">
     <%= form.submit %>
