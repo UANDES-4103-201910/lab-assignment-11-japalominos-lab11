@@ -1,14 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 users = [User.new(name:'Administrator', lastname:'User', \
               password:'123456', email:'admin@uandes.cl', \
-              role:'administrator',
-              address:'San Carlos de Apoquindo'), 
+              role:'admin',
+              address:'San Carlos de Apoquindo', admin: true) 
          User.new(name:'Registered', lastname:'User', \
               password:'123456', email:'reguser@miuandes.cl', \
               address:'San Carlos de Apoquindo'),
@@ -47,7 +40,7 @@ for tz in ticket_zones do
   tz.save!
 end 
 
-prices = [20000, 30000, 40000]
+prices = [20000, 30000, 40000]  
 
 ticket_types = []
 
@@ -73,5 +66,7 @@ for u in users do
     t.save!
   end
 end
+
+
 
 
