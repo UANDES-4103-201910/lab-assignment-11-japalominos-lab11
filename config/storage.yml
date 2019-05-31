@@ -5,7 +5,25 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
+  
+amazon:
+  service: S3
+  access_key_id: ""
+  secret_access_key: ""
+  bucket: ""
+  region: "" # e.g. 'us-east-1' 
 
+azure:
+  service: AzureStorage
+  storage_account_name: ""
+  storage_access_key: ""
+  container: ""
+  
+google:
+  service: GCS
+  credentials: <%= Rails.root.join("path/to/keyfile.json") %>
+  project: ""
+  bucket: ""
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
